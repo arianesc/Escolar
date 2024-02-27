@@ -5,7 +5,7 @@ from curso.models import Curso, CursoAluno
 class CursoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Curso
-        fields = ["nome", "descricao", "codigo"]
+        fields = ["id", "nome", "descricao", "codigo"]
         extra_kwargs = {'codigo': {'read_only': True}}
 
 
