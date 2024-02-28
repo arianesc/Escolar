@@ -1,7 +1,7 @@
 # Escolar
 Escolar é uma api que gerencia alunos e seus cursos.
 Com ela você pode cadastrar, listar, atualizar e deletar alunos e cursos.
-A Escolar foi feita utilizando Django3.2.24 e Python3.7
+A Escolar foi feita utilizando Django3.2.24 e Python3.7. Para Frontend foi utilizado React.
 
 
 ### Pré requisitos:
