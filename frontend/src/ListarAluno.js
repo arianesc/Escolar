@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 
 function ListarAlunos({ onDeletar }) {
     const [objetos, setObjetos] = useState([]);
@@ -10,18 +12,17 @@ function ListarAlunos({ onDeletar }) {
     });
 
     useEffect(() => {
-        // Função para buscar os objetos da API
         const fetchObjetos = async () => {
             try {
                 const response = await axios.get('http://localhost:8000/alunos/');
-                setObjetos(response.data); // Atualiza o estado com os objetos da API
+                setObjetos(response.data);
             } catch (error) {
                 console.error('Erro ao buscar objetos:', error);
             }
         };
 
-        fetchObjetos(); // Chama a função de busca ao montar o componente
-    }, []); // O segundo parâmetro vazio indica que useEffect só deve ser executado uma vez, ao montar o componente
+        fetchObjetos();
+    }, []);
 
     const handleEditar = (objeto) => {
         setEditando(true);
@@ -46,7 +47,6 @@ function ListarAlunos({ onDeletar }) {
         try {
             await axios.put(`http://localhost:8000/alunos/${objetoEditado.id}/`, objetoEditado);
             setEditando(false);
-            // Atualize a lista de objetos após a edição
             const response = await axios.get('http://localhost:8000/alunos/');
             setObjetos(response.data);
         } catch (error) {
@@ -73,6 +73,7 @@ function ListarAlunos({ onDeletar }) {
                 {objetos.map(objeto => (
                     <li key={objeto.id}>
                         <span>{objeto.nome}</span>
+                         <Link to={`/detalhes/${objeto.id}`}>Detalhes</Link>
                         <button onClick={() => handleEditar(objeto)}>Editar</button>
                         <button onClick={() => handleDeletar(objeto.id)}>Deletar</button>
                     </li>

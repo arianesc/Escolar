@@ -8,7 +8,7 @@ from django.views.generic import TemplateView
 router = DefaultRouter()
 router.register(r'alunos', AlunoViewSet)
 router.register(r'cursos', CursoViewSet)
-router.register(r'cursos_alunos', CursoAlunoViewSet)
+router.register(r'matriculas', CursoAlunoViewSet)
 
 
 urlpatterns = [

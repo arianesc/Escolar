@@ -10,18 +10,17 @@ function ListarCursos({ onDeletar }) {
     });
 
     useEffect(() => {
-        // Função para buscar os objetos da API
         const fetchObjetos = async () => {
             try {
                 const response = await axios.get('http://localhost:8000/cursos/');
-                setObjetos(response.data); // Atualiza o estado com os objetos da API
+                setObjetos(response.data);
             } catch (error) {
                 console.error('Erro ao buscar curso:', error);
             }
         };
 
-        fetchObjetos(); // Chama a função de busca ao montar o componente
-    }, []); // O segundo parâmetro vazio indica que useEffect só deve ser executado uma vez, ao montar o componente
+        fetchObjetos();
+    }, []);
 
     const handleEditar = (objeto) => {
         setEditando(true);

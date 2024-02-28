@@ -28,7 +28,7 @@ function CadastrarCurso() {
             .then(response => {
                 console.log('Dados enviados com sucesso:', response.data);
                 alert('Curso Cadastrado!');
-                    window.location.href = 'http://localhost:3000/curso/listar'; // Substitua 'URL_DA_NOVA_PAGINA' pela URL desejada
+                    window.location.href = 'http://localhost:3000/curso/listar';
             })
             .catch(error => {
                 console.error('Erro ao enviar dados:', error);
