@@ -1,52 +1,33 @@
 # Escolar
 Escolar é uma api que gerencia alunos e seus cursos.
 Com ela você pode cadastrar, listar, atualizar e deletar alunos e cursos.
+A Escolar foi feita utilizando Django3.2.24 e Python3.7
 
 ### Pré requisitos:
 - Python3.7
 
 ### Como rodar:
 
-1. Crie um ambiente virtual
-
-```commandline
-python3.7 -m venv env
-```
-
-2. Ative o ambiente virtual
+1. Configure o ambiente e installe as dependencias backend.
 ````commandline
-source env/bin/activate
+make setup.back
 ````
 
-3. Entre no diretório da aplicação backend
+2. Rode a aplicação backend
 ```commandline
-cd escolar/
+make up.back
 ```
 
-4. Instale os pacotes do backend
+3. Em outro terminal configure o ambiente e installe as dependencias frontend 
 ```commandline
-pip install -r requirements.txt
-
-```
-5. Rode a aplicação backend
-```commandline
-python3.7 manage.py runserver
+make setup.front
 ```
 
-6. Vá para o diretório frontend
+4. Rode a aplicação frontend
 ```commandline
-cd ../frontend/
+make up.front
 ```
 
-7. Instale os pacotes frontend
-```commandline
-npm install
-```
-
-8. Rode a aplicação frontend
-```commandline
-npm start
-```
 
 Para ver a API Rest acesse o link: 
 ```
